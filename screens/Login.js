@@ -23,10 +23,10 @@ class LoginScreen extends React.Component {
                     <TextInput style={styles.input} />
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
-                            <Button title="Sign Up" color='#00BFA5' onPress={() => this.props.navigation.navigate('Register')}/>
+                            <Button title="Sign Up" color='#00BFA5' onPress={() => this.props.navigation.navigate('Register')} />
                         </View>
                         <View style={styles.button}>
-                            <Button title="Login" color='#00BFA5' onPress={() => this.props.navigation.navigate('Home')}/>
+                            <Button title="Login" color='#00BFA5' onPress={() => this.props.navigation.navigate('Home')} />
                         </View>
                     </View>
                 </View>
@@ -38,11 +38,12 @@ class LoginScreen extends React.Component {
 const AppNavigator = createStackNavigator(
     {
         Register: RegisterScreen,
-        Login: LoginScreen,
+        Login: { screen: LoginScreen, header: null, },
         Home: HomeScreen
     },
     {
         initialRouteName: 'Login',
+
     }
 );
 
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     heading: {
         color: '#00BFA5',
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+    render() {
+        return <AppContainer />;
+    }
 }

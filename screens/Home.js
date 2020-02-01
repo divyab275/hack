@@ -2,19 +2,18 @@ import React from 'react';
 import { View, Button, TextInput, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
+// import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import MapScreen from './Map';
-import TreeAlbumScreen from './TreeAlbum';
-import DonateScreen from './Donate';
-import PlantScreen from './Plant'
+import PlantOrDonateScreen from './PlantOrDonate';
+import AlbumScreen from './AlbumScreen';
+
 
 const AppNavigator = createBottomTabNavigator(
     {
         Map: MapScreen,
-        TreeAlbum: TreeAlbumScreen,
-        Donate: DonateScreen,
-        Plant: PlantScreen
+        Album: AlbumScreen,
+        PlantOrDonate: PlantOrDonateScreen,
     },
     {
         initialRouteName: 'Map',
@@ -24,9 +23,9 @@ const AppNavigator = createBottomTabNavigator(
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+    render() {
+        return <AppContainer />;
+    }
 }
 
 
