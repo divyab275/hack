@@ -1,5 +1,6 @@
 import React from 'react'
 import {View,Button,TextInput,StyleSheet} from 'react-native'
+import { genericTypeAnnotation } from '@babel/types';
 
 export default  () =>{
     return (
@@ -9,10 +10,10 @@ export default  () =>{
         <TextInput style={styles.input}/>
         <View style={styles.buttonContainer}>
             <View style={styles.button}>
-                <Button title="Sign Up" />
+                <Button title="Sign Up" color = '#00BFA5'/>
             </View>
             <View style={styles.button}>
-                <Button title="Login"/>
+                <Button title="Login" color = '#00BFA5'/>
             </View>
         </View>     
     </View> 
@@ -24,32 +25,32 @@ const styles = StyleSheet.create({
     screen:{
         flex:1,
         justifyContent:'center',
-        backgroundColor:'#cdfac3',
         alignItems:'center'
     },
     inputContainer:{
         padding:40,
-        backgroundColor:'#ffffff',
-        borderRadius:5,
-        width:'80%',
-        shadowColor:'#fff',
-        shadowOffset:{width:0,height:2},
-        shadowOpacity:0.26,
-        shadowRadius:6,
-        elevation:13, 
+    
+        borderWidth : 1,
     },
     buttonContainer:{
-        flexDirection:'row',
+        flexDirection:'column',
         justifyContent:'space-between',
-        paddingTop:30,
+        alignItems : 'center',
+        padding:30,
+        margin : 30,
+        borderWidth : 1,
     },
     input:{
-        borderColor:'white',
+    
         borderBottomWidth:.5,
         paddingBottom:0,
         paddingTop:15,
     },
     button:{
-        width:'33%'
+        margin : 10,  
+        width : '150%',   
+    },
+    buttons : {
+        width : 20,
     }
 })
