@@ -1,10 +1,19 @@
 import React from 'react'
-import {View,Button,TextInput,StyleSheet} from 'react-native'
+import {View,Button,TextInput,StyleSheet,Text} from 'react-native'
 import { genericTypeAnnotation } from '@babel/types';
+import { Icon } from 'react-native-vector-icons/FontAwesome'
+
+const myUser = <Icon name="user" size={30} color="#900" />;
 
 export default  () =>{
     return (
     <View style={styles.screen}>
+    <Text style = {styles.heading}>
+        Treeky 
+    </Text>
+    <Text style = {styles.subheading}>
+        Let us plant a greener world!
+    </Text>
     <View style={styles.inputContainer}>
         <TextInput style={styles.input}/>
         <TextInput style={styles.input}/>
@@ -21,11 +30,22 @@ export default  () =>{
     );
 };
 
+
 const styles = StyleSheet.create({
     screen:{
         flex:1,
         justifyContent:'center',
         alignItems:'center'
+    },
+    heading : {
+        color : '#00BFA5',
+        fontSize : 80,
+        fontWeight : "bold",
+        fontFamily : 'serif'
+    },
+    subheading : {
+        color : '#00BFA5',
+        fontFamily : 'serif'
     },
     inputContainer:{
         padding:40,
@@ -41,8 +61,9 @@ const styles = StyleSheet.create({
         borderWidth : 1,
     },
     input:{
-    
-        borderBottomWidth:.5,
+        borderBottomStartRadius : 2,
+        borderBottomWidth: 1,
+        borderColor : '#00BFA5',
         paddingBottom:0,
         paddingTop:15,
     },
