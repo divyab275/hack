@@ -7,6 +7,7 @@ import { genericTypeAnnotation } from '@babel/types';
 import RegisterScreen from './Register'
 import HomeScreen from './Home'
 import AlbumScreen from './AlbumScreen'
+import Camer from './Camer'
 // const myUser = <Icon name="user" size={30} color="#900" />;
 
 class LoginScreen extends React.Component {

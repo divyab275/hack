@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Button, TextInput, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Camera from './Camer'
 // import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import MapScreen from './Map';
