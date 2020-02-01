@@ -1,62 +1,50 @@
-import React from 'react';
-import { View, Button, TextInput, StyleSheet } from 'react-native'
+import MapView, { Marker } from 'react-native-maps-osmdroid'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import React from 'react'
+import { View, Button, TextInput, StyleSheet, Text } from 'react-native'
+const styles = StyleSheet.create({
+    container: {
+        ...StyleSheet.absoluteFillObject,
+        height: 400,
+        width: 400,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    map: {
+        ...StyleSheet.absoluteFillObject,
+    },
+});
 
-
-// import LoginScreen from './Login';
-
-export default class AlbumScreen extends React.Component {
-    render() {
-        return (
-            <View style={styles.screen}>
-                <View style={styles.inputContainer}>
-                    <TextInput style={styles.input} />
-                    <TextInput style={styles.input} />
-                    <View style={styles.buttonContainer}>
-                        <View style={styles.button}>
-                            <Button title="Map" color='#00BFA5' />
-                        </View>
-                    </View>
-                </View>
+export default class LoginScreen extends React.Component {
+    render(){
+        return(
+            <View style={styles.container}>
+                <MapView
+                    // remove if not using Google Maps
+                    style={styles.map}
+                    region={{
+                        latitude: 10.8505,
+                        longitude: 76.2711,
+                        latitudeDelta: 0.015,
+                        longitudeDelta: 0.0121,
+                    }} maxZoomLevel={8}
+                ><Marker
+                coordinate={{
+                    latitude: 10.8505,
+                    longitude:  76.2711,
+                }}
+                title={'tree'}
+                description={'by this guy'}
+              /><Marker
+              coordinate={{
+                  latitude: 10.8705,
+                  longitude:  76.1511,
+    
+              }}
+              title={'tree'}
+              description={'by this guy'}
+            />
+                </MapView>
             </View>
-        );
+        )
     }
 }
-
-
-
-
-
-const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    inputContainer: {
-        padding: 40,
-
-        borderWidth: 1,
-    },
-    buttonContainer: {
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 30,
-        margin: 30,
-        borderWidth: 1,
-    },
-    input: {
-
-        borderBottomWidth: .5,
-        paddingBottom: 0,
-        paddingTop: 15,
-    },
-    button: {
-        margin: 10,
-        width: '150%',
-    },
-    buttons: {
-        width: 20,
-    }
-})
-

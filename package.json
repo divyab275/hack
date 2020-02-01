@@ -11,10 +11,16 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
+    "axios": "^0.19.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.5.3",
+<<<<<<< HEAD
     "react-native-image-picker": "^2.2.1",
+=======
+    "react-native-leaderboard": "^1.0.6",
+    "react-native-maps-osmdroid": "0.26.1-rc1",
+>>>>>>> ae19cb2c2c2d70df3edd6cd5a2a93956546414c4
     "react-native-paper": "^3.5.1",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.6.4",

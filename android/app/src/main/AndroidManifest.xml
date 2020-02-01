@@ -2,8 +2,12 @@
   package="com.hack">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+=======
+    
+>>>>>>> ae19cb2c2c2d70df3edd6cd5a2a93956546414c4
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
