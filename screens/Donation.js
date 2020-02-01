@@ -6,6 +6,12 @@ import { ScrollView } from 'react-native-gesture-handler';
 // import LoginScreen from './Login';
 
 export default class Garden extends React.Component {
+    state = {
+        show : false,
+    }
+    closeModal= ()=>{
+        this.setState({show:false})
+    }
     render() {
         if(!this.props.show)
             return null
@@ -13,74 +19,47 @@ export default class Garden extends React.Component {
         plants = []
         for(let i = 0; i < 20; i++){
             plants.push(
-                <View style = {styles.albumCover}>
+                <TouchableHighlight onPress = {()=>{console.log("Kerillao")
+                this.setState({show:true})}}>
+                        <View style = {styles.albumCover} >
                     <Text>
                         Hello
                     </Text> 
                     <Image source={{uri: base64Icon, width: 70, height: 70}} />
                 </View>
+                    </TouchableHighlight>
+                    
             )
         }
         // console.log(plants)
-        // return (
-        //     <ScrollView>
-        //         <View style={styles.album}>
-        //         {plants}
-        //     </View>
-        //     </ScrollView>
-            
-        // );
-        return(
-            <ModalExample/>
-        )
+        return (
+            <React.Fragment>
+            <ScrollView>
+                <View style={styles.album}>
+                {plants}
+            </View>
+            </ScrollView>
+            <ModalExample show = {this.state.show} close = {this.closeModal}/>
+            </React.Fragment>
+        );
+       
     }
 }
 
 class ModalExample extends React.Component {
-    state = {
-      modalVisible: false,
-    };
-  
-    setModalVisible(visible) {
-      this.setState({modalVisible: visible});
-    }
-  
-    render() {
-      return (
-        <View style={{marginTop: 22}}>
-          <Modal
-            animationType="slide"
-            transparent={false}
-            presentationStyle = 'pageSheet'
-            visible={this.state.modalVisible}
-            onRequestClose={() => {
-              Alert.alert('Modal has been closed.');
-            }}>
-            <View style={{marginTop: 22}}>
-              <View>
-                <Text>Hello World!</Text>
-  
-                <TouchableHighlight
-                  onPress={() => {
-                    this.setModalVisible(!this.state.modalVisible);
-                  }}>
-                  <Text>Hide Modal</Text>
-                </TouchableHighlight>
-              </View>
+    render(){
+        if(!this.props.show)
+            return null
+        return(
+            <View style={styles.modal}>
+                <Text>Hello Moduuu</Text>
+                <Button onPress = {()=>{
+                    this.props.close()
+                }} title="Close"/>
             </View>
-          </Modal>
-  
-          <TouchableHighlight
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-            <Text>Show Modal</Text>
-          </TouchableHighlight>
-        </View>
-      );
+        )
     }
-  }
-  
+}
 
 
 
@@ -98,6 +77,12 @@ const styles = StyleSheet.create({
 
     },
     modal : {
-
+        alignItems : 'center',
+        backgroundColor : '#fff',
+        height : '80%',
+        justifyContent : 'center',
+        alignSelf : 'center',
+        width : '80%',
+        position : 'absolute'
     }    
 })
