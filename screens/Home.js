@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import MapScreen from './Map';
 import PlantOrDonateScreen from './PlantOrDonate';
 import AlbumScreen from './AlbumScreen';
+import LeaderBoardScreen from './LeaderBoard'
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -14,6 +15,7 @@ const AppNavigator = createBottomTabNavigator(
         Map: MapScreen,
         Album: AlbumScreen,
         PlantOrDonate: PlantOrDonateScreen,
+        LeaderBoard : LeaderBoardScreen
     },
     {
         initialRouteName: 'Map',
