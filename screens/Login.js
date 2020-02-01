@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     inputContainer: {
         padding: 40,
 
-        borderWidth: 1,
+       // borderWidth: 1,
     },
     buttonContainer: {
         flexDirection: 'column',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 30,
         margin: 30,
-        borderWidth: 1,
+        // borderWidth: 1,
     },
     input: {
         borderBottomStartRadius: 2,

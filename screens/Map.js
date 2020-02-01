@@ -1,25 +1,34 @@
 import React from 'react';
 import { View, Button, TextInput, StyleSheet } from 'react-native'
+import MapView from 'react-native-maps-osmdroid';
 
 
 // import LoginScreen from './Login';
 
 export default class MapScreen extends React.Component {
-    render() {
+    getInitialState() {
+        return {
+          region: {
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          },
+        };
+      }
+       
+      onRegionChange(region) {
+        this.setState({ region });
+      }
+       
+      render() {
         return (
-            <View style={styles.screen}>
-                <View style={styles.inputContainer}>
-                    <TextInput style={styles.input} />
-                    <TextInput style={styles.input} />
-                    <View style={styles.buttonContainer}>
-                        <View style={styles.button}>
-                            <Button title="Home" color='#00BFA5' />
-                        </View>
-                    </View>
-                </View>
-            </View>
+          <MapView
+            region={this.state.region}
+            onRegionChange={this.onRegionChange}
+          />
         );
-    }
+      }
 }
 
 
@@ -32,31 +41,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    inputContainer: {
-        padding: 40,
-
-        borderWidth: 1,
-    },
-    buttonContainer: {
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 30,
-        margin: 30,
-        borderWidth: 1,
-    },
-    input: {
-
-        borderBottomWidth: .5,
-        paddingBottom: 0,
-        paddingTop: 15,
-    },
-    button: {
-        margin: 10,
-        width: '150%',
-    },
-    buttons: {
-        width: 20,
-    }
 })
 
