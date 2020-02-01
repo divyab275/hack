@@ -1,20 +1,35 @@
 import React from 'react';
-import { View, Button, TextInput, StyleSheet } from 'react-native'
+import { View, Button, TextInput, StyleSheet, Text } from 'react-native'
 
 
 // import LoginScreen from './Login';
 
 export default class RegisterScreen extends React.Component {
+    constructor(props){
+        super(props)
+    
+        this.state = {
+          amount: '',
+        }
+      }
+    
+      _handlePress() {
+         console.log(this.state.amount);
+      }
     render() {
         return (
             <View style={styles.screen}>
-                <View style={styles.inputContainer}>
-                    <TextInput style={styles.input} />
-                    <TextInput style={styles.input} />
-                    <View style={styles.buttonContainer}>
-                        <View style={styles.button}>
-                            <Button title="Plant" color='#00BFA5' />
-                        </View>
+                <View style={styles.donate}>
+                    <Text style={styles.heading}>Donate</Text>
+                    <View style={styles.inner}>
+                        <TextInput placeholder="Amount" onChangeText={(text) => this.setState({amount:text})}></TextInput>
+                        <Button title="Donate" style={styles.button} onPress={() => this._handlePress()} />
+                    </View>
+                </View>
+                <View style={styles.plant}>
+                    <Text style={styles.heading}>Plant</Text>
+                    <View style={styles.inner}>
+                        <Button title="Plant" style={styles.button} />
                     </View>
                 </View>
             </View>
@@ -28,34 +43,21 @@ export default class RegisterScreen extends React.Component {
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'space-around',
     },
-    inputContainer: {
-        padding: 40,
-
-        borderWidth: 1,
+    inner: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        padding: 10
     },
-    buttonContainer: {
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 30,
-        margin: 30,
-        borderWidth: 1,
-    },
-    input: {
-
-        borderBottomWidth: .5,
-        paddingBottom: 0,
-        paddingTop: 15,
+    heading: {
+        textAlign: 'center',
+        fontSize: 30,
+        padding: 10
     },
     button: {
-        margin: 10,
-        width: '150%',
-    },
-    buttons: {
-        width: 20,
+        textAlign: 'center',
     }
+
 })
 
