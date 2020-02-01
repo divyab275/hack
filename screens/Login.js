@@ -10,6 +10,19 @@ import AlbumScreen from './AlbumScreen'
 // const myUser = <Icon name="user" size={30} color="#900" />;
 
 class LoginScreen extends React.Component {
+    constructor(props){
+        super(props)
+    
+        this.state = {
+          email: '',
+          password: '',
+        }
+      }
+    
+      _handlePress() {
+         console.log(this.state.email);
+         console.log(this.state.password);
+      }
     render() {
         return (
             <View style={styles.screen}>
@@ -20,14 +33,14 @@ class LoginScreen extends React.Component {
                     Let us plant a greener world!
     </Text>
                 <View style={styles.inputContainer}>
-                    <TextInput style={styles.input} />
-                    <TextInput style={styles.input} />
+                    <TextInput style={styles.input} placeholder="Email"  onChangeText={(text) => this.setState({email:text})}/>
+                    <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} onChangeText={(text) => this.setState({password:text})}/>
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
                             <Button title="Sign Up" color='#00BFA5' onPress={() => this.props.navigation.navigate('Register')} />
                         </View>
                         <View style={styles.button}>
-                            <Button title="Login" color='#00BFA5' onPress={() => this.props.navigation.navigate('Home')} />
+                            <Button title="Login" color='#00BFA5' onPress={() => {this._handlePress();this.props.navigation.navigate('Home')}} />
                         </View>
                     </View>
                 </View>
