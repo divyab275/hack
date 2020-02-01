@@ -7,12 +7,23 @@ import {
 } from 'react-native';
 import Login from './screens/Login'
 import Register from './screens/Register'
+import Map from './screens/Map'
+// const App= () =>  {
+//   return (
+//     <>
+//       <StatusBar  />
+//       <Login/>
+
+//     </>
+
+
+//   );
+// };
 
 const App= () =>  {
   return (
     <>
-      <StatusBar  />
-      <Login/>
+      <Map  />
 
     </>
 
