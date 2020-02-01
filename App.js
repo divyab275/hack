@@ -6,12 +6,13 @@ import {
   StatusBar,
 } from 'react-native';
 import Login from './screens/Login'
+import Register from './screens/Register'
 
 const App= () =>  {
   return (
     <>
       <StatusBar  />
-      <Login/>
+      <Register/>
 
     </>
 
