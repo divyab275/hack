@@ -1,19 +1,33 @@
 import React from 'react';
-import { View, Button, TextInput, StyleSheet } from 'react-native'
+import { View, Button, TextInput, StyleSheet } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 
 import MapScreen from './Map';
+import TreeAlbumScreen from './TreeAlbum';
+import DonateScreen from './Donate';
+import PlantScreen from './Plant'
 
-export default class HomeScreen extends React.Component {
-    render() {
-        return (
-            <MapScreen/>
-        );
+const AppNavigator = createBottomTabNavigator(
+    {
+        Map: MapScreen,
+        TreeAlbum: TreeAlbumScreen,
+        Donate: DonateScreen,
+        Plant: PlantScreen
+    },
+    {
+        initialRouteName: 'Map',
     }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
 }
-
-
-
 
 
 const styles = StyleSheet.create({
