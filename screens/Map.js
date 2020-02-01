@@ -4,7 +4,7 @@ import { View, Button, TextInput, StyleSheet } from 'react-native'
 
 // import LoginScreen from './Login';
 
-export default class RegisterScreen extends React.Component {
+export default class MapScreen extends React.Component {
     render() {
         return (
             <View style={styles.screen}>
@@ -13,7 +13,7 @@ export default class RegisterScreen extends React.Component {
                     <TextInput style={styles.input} />
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
-                            <Button title="Register" color='#00BFA5' />
+                            <Button title="Home" color='#00BFA5' />
                         </View>
                     </View>
                 </View>
@@ -21,6 +21,7 @@ export default class RegisterScreen extends React.Component {
         );
     }
 }
+
 
 
 

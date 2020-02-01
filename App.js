@@ -12,7 +12,7 @@ const App= () =>  {
   return (
     <>
       <StatusBar  />
-      <Register/>
+      <Login/>
 
     </>
 
