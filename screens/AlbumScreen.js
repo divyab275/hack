@@ -3,20 +3,33 @@ import { View, Button, TextInput, StyleSheet } from 'react-native'
 
 
 // import LoginScreen from './Login';
+import Garden from './Garden'
+import Donation from './Donation'
 
 export default class AlbumScreen extends React.Component {
+    state = {
+        shown : 'garden',
+    }
     render() {
         return (
             <View style={styles.screen}>
-                <View style={styles.inputContainer}>
-                    <TextInput style={styles.input} />
-                    <TextInput style={styles.input} />
-                    <View style={styles.buttonContainer}>
-                        <View style={styles.button}>
-                            <Button title="album" color='#00BFA5' />
-                        </View>
+                <View style={styles.buttonContainer}>
+                    <View style = {styles.button}>  
+                        <Button title="MY GARDEN" color = '#00BFA5' onPress={()=>{
+                            this.setState({shown:'garden'})
+                        }}/>
+                    </View>
+                    <View style = {styles.button}>
+                        <Button title="MY DONATIONS" color = "#00BFA5" onPress={()=>{
+                            this.setState({shown:'donation'})
+                        }}/>
                     </View>
                 </View>
+                <View>
+                <Garden show={this.state.shown == 'garden'}/>
+                <Donation show={this.state.shown == 'donation'}/>
+                </View>
+                
             </View>
         );
     }
@@ -29,34 +42,15 @@ export default class AlbumScreen extends React.Component {
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flexDirection : "column",
+        justifyContent: 'flex-start',
+        
     },
-    inputContainer: {
-        padding: 40,
-
-        borderWidth: 1,
-    },
-    buttonContainer: {
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 30,
-        margin: 30,
-        borderWidth: 1,
-    },
-    input: {
-
-        borderBottomWidth: .5,
-        paddingBottom: 0,
-        paddingTop: 15,
-    },
-    button: {
-        margin: 10,
-        width: '150%',
-    },
-    buttons: {
-        width: 20,
+    buttonContainer : {
+        flexDirection : 'row',
+        justifyContent : 'space-evenly',
+        marginTop : 100,
+        marginBottom : 30,
     }
 })
 

@@ -6,6 +6,7 @@ import { genericTypeAnnotation } from '@babel/types';
 // import { Icon } from 'react-native-vector-icons/FontAwesome'
 import RegisterScreen from './Register'
 import HomeScreen from './Home'
+import AlbumScreen from './AlbumScreen'
 // const myUser = <Icon name="user" size={30} color="#900" />;
 
 class LoginScreen extends React.Component {
@@ -110,6 +111,6 @@ const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
     render() {
-        return <AppContainer />;
+        return <AppContainer/>;
     }
 }
