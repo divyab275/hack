@@ -13,7 +13,7 @@ export default class Profile extends React.Component{
     }
     getDetails(){
         axios.post('http://treeky.herokuapp.com/getProfile',{
-            email : 'Db'
+            email : 'rwithik@gmail.com'
         })
         .then(res => {
             const {name, email, balance, earning} = res.data.data; 

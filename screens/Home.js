@@ -22,7 +22,20 @@ const AppNavigator = createBottomTabNavigator(
     },
     {
         initialRouteName: 'Map',
-    }
+        tabBarOptions: {
+            activeTintColor: '#e91e63',
+            labelStyle: {
+              fontSize: 13,
+
+            },
+            style: {
+            //   backgroundColor: 'blue',
+              marginBottom : 10,
+              paddingBottom : 7
+            },
+          }
+    },
+    
 );
 
 const AppContainer = createAppContainer(AppNavigator);
