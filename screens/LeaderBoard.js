@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, TextInput, StyleSheet } from 'react-native';
+import { View, Button, TextInput, Text, StyleSheet } from 'react-native';
 import Leaderboard from 'react-native-leaderboard';
 import axios from 'axios';
 //...
@@ -17,6 +17,7 @@ export default class LeaderboardScreen extends React.Component {
     render() {
         return (
             <View style={styles.screen}>
+                <View style={styles.heading}><Text>Leaderboard</Text></View>
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}>
                         <Button title="Donor" color='#00BFA5' onPress={() => {
@@ -142,5 +143,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         marginTop: 100,
         marginBottom: 30,
+    },
+    heading:{
+        textAlign:'center',
+        fontSize:30
     }
 })
