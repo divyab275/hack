@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
 });
 
 export default class LoginScreen extends React.Component {
-    render(){
-        return(
+    render() {
+        return (
             <View style={styles.container}>
                 <MapView
                     // remove if not using Google Maps
@@ -28,21 +28,62 @@ export default class LoginScreen extends React.Component {
                         longitudeDelta: 0.0121,
                     }} maxZoomLevel={8}
                 ><Marker
-                coordinate={{
-                    latitude: 10.8505,
-                    longitude:  76.2711,
-                }}
-                title={'tree'}
-                description={'by this guy'}
-              /><Marker
-              coordinate={{
-                  latitude: 10.8705,
-                  longitude:  76.1511,
-    
-              }}
-              title={'tree'}
-              description={'by this guy'}
-            />
+                        coordinate={{
+                            latitude: 10.8505,
+                            longitude: 76.2711,
+                        }}
+                        title={'tree'}
+                        description={'by albin'}
+                    />
+                    <Marker
+                        coordinate={{
+                            latitude: 10.8505,
+                            longitude: 76.3711,
+                        }}
+                        title={'tree'}
+                        description={'by albin'}
+                    />
+                    <Marker
+                        coordinate={{
+                            latitude: 10.9505,
+                            longitude: 76.2711,
+                        }}
+                        title={'tree'}
+                        description={'by albin'}
+                    />
+                    <Marker
+                        coordinate={{
+                            latitude: 10.8705,
+                            longitude: 76.1511,
+
+                        }}
+                        title={'tree'}
+                        description={'by divya'}
+                    />
+                    <Marker
+                        coordinate={{
+                            latitude: 9.8505,
+                            longitude: 76.2711,
+                        }}
+                        title={'tree'}
+                        description={'by albin'}
+                    />
+                    <Marker
+                        coordinate={{
+                            latitude: 9.8505,
+                            longitude: 76.3711,
+                        }}
+                        title={'tree'}
+                        description={'by albin'}
+                    />
+                    <Marker
+                        coordinate={{
+                            latitude: 9.8505,
+                            longitude: 76.3211,
+                        }}
+                        title={'tree'}
+                        description={'by albin'}
+                    />
                 </MapView>
             </View>
         )

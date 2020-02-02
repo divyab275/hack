@@ -50,6 +50,7 @@ const AppNavigator = createStackNavigator(
     },
     {
         initialRouteName: 'Register',
+        headerMode:null
 
     }
 );
@@ -66,7 +67,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        flexDirection : 'row',
+        flexDirection : 'column',
         justifyContent: 'space-around',
         alignContent : 'center'
     },
@@ -75,13 +76,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         padding: 10
     },
-    heading: {
-        textAlign: 'center',
-        fontSize: 30,
-        padding: 10
-    },
     button: {
         textAlign: 'center',
+    },
+    heading:{
+        padding:20,
+        textAlign:'center',
+        fontSize:30,
+        color:'#00bfa5'
     }
 
 })
