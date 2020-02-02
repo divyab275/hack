@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Button, TextInput, StyleSheet, Text } from 'react-native'
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-
+import  CameraScreen from './Camer'
 // import LoginScreen from './Login';
 
-export default class RegisterScreen extends React.Component {
+class RegisterScreen extends React.Component {
     constructor(props){
         super(props)
     
@@ -16,6 +18,8 @@ export default class RegisterScreen extends React.Component {
       _handlePress() {
          console.log(this.state.amount);
       }
+
+    
     render() {
         return (
             <View style={styles.screen}>
@@ -23,13 +27,13 @@ export default class RegisterScreen extends React.Component {
                     <Text style={styles.heading}>Donate</Text>
                     <View style={styles.inner}>
                         <TextInput placeholder="Amount" onChangeText={(text) => this.setState({amount:text})}></TextInput>
-                        <Button title="Donate" style={styles.button} onPress={() => this._handlePress()} />
+                        <Button title="Donate" color='#00BFA5' style={styles.button} onPress={() => this._handlePress()} />
                     </View>
                 </View>
                 <View style={styles.plant}>
                     <Text style={styles.heading}>Plant</Text>
                     <View style={styles.inner}>
-                        <Button title="Plant" style={styles.button} />
+                        <Button title="Plant" color='#00BFA5' style={styles.button} onPress = {() => this.props.navigation.navigate('Camera')} />
                     </View>
                 </View>
             </View>
@@ -39,11 +43,32 @@ export default class RegisterScreen extends React.Component {
 
 
 
+const AppNavigator = createStackNavigator(
+    {
+        Register : RegisterScreen,
+        Camera : CameraScreen,
+    },
+    {
+        initialRouteName: 'Register',
+
+    }
+);
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends React.Component {
+    render() {
+        return <AppContainer />;
+    }
+}
+
+
 
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
+        flexDirection : 'row',
         justifyContent: 'space-around',
+        alignContent : 'center'
     },
     inner: {
         flexDirection: 'row',

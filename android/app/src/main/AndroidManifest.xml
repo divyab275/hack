@@ -2,12 +2,9 @@
   package="com.hack">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-=======
     
->>>>>>> ae19cb2c2c2d70df3edd6cd5a2a93956546414c4
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -26,16 +23,7 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-      <provider
-      android:name="android.support.v4.content.FileProvider"
-      android:authorities="${applicationId}.provider"
-      android:exported="false"
-      android:grantUriPermissions="true">
-      <meta-data
-        tools:replace="android:resource"
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/provider_image_picker_paths" />
-    </provider>
+      
     </application>
 
 </manifest>
