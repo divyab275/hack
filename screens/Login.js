@@ -8,6 +8,7 @@ import { genericTypeAnnotation } from '@babel/types';
 import RegisterScreen from './Register'
 import HomeScreen from './Home'
 import AlbumScreen from './AlbumScreen'
+import Profile from './Profile';
 // const myUser = <Icon name="user" size={30} color="#900" />;
 
 class LoginScreen extends React.Component {
@@ -91,11 +92,11 @@ const styles = StyleSheet.create({
         color: '#00BFA5',
         fontSize: 80,
         fontWeight: "bold",
-        fontFamily: 'serif'
+        fontFamily: 'Montserrat, serif'
     },
     subheading: {
         color: '#00BFA5',
-        fontFamily: 'serif'
+        fontFamily: 'Montserrat, serif'
     },
     inputContainer: {
         padding: 40,
