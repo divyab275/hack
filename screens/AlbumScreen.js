@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, Button, TextInput, StyleSheet } from 'react-native'
-
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import CameraScreen from './Camer'
 
 // import LoginScreen from './Login';
 import Garden from './Garden'
 import Donation from './Donation'
 
-export default class AlbumScreen extends React.Component {
+class AlbumScreen extends React.Component {
     state = {
         shown : 'garden',
     }
@@ -26,7 +28,7 @@ export default class AlbumScreen extends React.Component {
                     </View>
                 </View>
                 <View>
-                <Garden show={this.state.shown == 'garden'}/>
+                <Garden show={this.state.shown == 'garden'} navigat = {this.props.navigation}/>
                 <Donation show={this.state.shown == 'donation'}/>
                 </View>
                 
@@ -34,6 +36,26 @@ export default class AlbumScreen extends React.Component {
         );
     }
 }
+
+
+const AppNavigator = createStackNavigator(
+    {
+        Album : AlbumScreen,
+        Camera : CameraScreen,
+    },
+    {
+        initialRouteName: 'Album',
+
+    }
+);
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends React.Component {
+    render() {
+        return <AppContainer />;
+    }
+}
+
 
 
 
