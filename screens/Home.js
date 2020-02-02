@@ -3,6 +3,7 @@ import { View, Button, TextInput, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Camera from './Camer'
+import Profile from './Profile'
 // import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import MapScreen from './Map';
@@ -16,7 +17,8 @@ const AppNavigator = createBottomTabNavigator(
         Map: MapScreen,
         Album: AlbumScreen,
         PlantOrDonate: PlantOrDonateScreen,
-        LeaderBoard : LeaderBoardScreen
+        LeaderBoard : LeaderBoardScreen,
+        Profile : Profile
     },
     {
         initialRouteName: 'Map',
