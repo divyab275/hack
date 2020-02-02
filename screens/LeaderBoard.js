@@ -74,8 +74,8 @@ class DonorLeaderboard extends React.Component {
         this.state = {
             data: [
                 { email: 'hasseena', score: 5 },
-                { email: 'rwithik', score: 4 },
-                { email: 'divya', score: 39 },
+                { email: 'rwithik', score: 69 },
+                { email: 'divya', score: 420 },
                 { email: 'justin', score: 39 }
                 //...
             ] //can also be an object of objects!: data: {a:{}, b:{}}

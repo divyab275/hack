@@ -39,7 +39,7 @@ componentDidMount() {
                 </Text>
                 </View>
                 <View style = {styles.image}>
-                    <Image style = {{height : 200,width :200}}></Image>
+                    <Image style = {{height : 200,width :200}} source={require('../profile-placeholder.png')} style ={{height:200,width:200}}></Image>
                     
                 </View>
                 <View  style ={{width:200}}>
